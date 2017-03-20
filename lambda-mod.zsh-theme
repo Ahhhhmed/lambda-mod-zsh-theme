@@ -27,18 +27,18 @@ function get_right_prompt() {
         echo -n "%{$reset_color%}"
     fi
 }
+#%{$fg_bold[$USERCOLOR]%}%n\
 
 PROMPT='
 ${LAMBDA}\
- %{$fg_bold[$USERCOLOR]%}%n\
- %{$fg_no_bold[magenta]%}[%3~]\
+ %{$fg_bold[cyan]%}%3~\
  $(check_git_prompt_info)\
 %{$reset_color%}'
 
 RPROMPT='$(get_right_prompt)'
 
 # Format for git_prompt_info()
-ZSH_THEME_GIT_PROMPT_PREFIX="at %{$fg[blue]%} "
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_no_bold[magenta]%}at %{$fg[white]%} %{$fg_bold[blue]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY=""
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%} ✔"
